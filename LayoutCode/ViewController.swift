@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         let rootVC = SecondVC()
         let navVC = UINavigationController(rootViewController: rootVC)
         navVC.navigationBar.backgroundColor = .cyan
-        
+        navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: true, completion: nil)
         
     }
@@ -38,10 +38,29 @@ class ViewController: UIViewController {
 }
 
 class SecondVC: UIViewController{
+    
+    private let button = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .orange
         title = "Welcome"
+        
+        button.frame = CGRect(x: 70, y: 100, width: 300, height: 40)
+        view.addSubview(button)
+        button.backgroundColor = .blue
+        button.layer.cornerRadius = CGFloat(5.0)
+        button.setTitle("push another controller", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     }
+    
+    @objc private func didTapButton(){
+        let vc = UIViewController()
+        vc.view.backgroundColor = .green
+        vc.title = "another VC"
+        navigationController?.pushViewController(vc, animated: true)
+    }
+        
 }
 
