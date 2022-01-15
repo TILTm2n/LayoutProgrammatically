@@ -26,6 +26,13 @@ class ViewController: UIViewController {
     }
     
     @objc func didTapButton(){
+        let rootVC = UIViewController()
+        rootVC.title = "Welocme"
+        rootVC.view.backgroundColor = .green
+        let navVC = UINavigationController(rootViewController: rootVC)
+        navVC.navigationBar.backgroundColor = .cyan
+        
+        present(navVC, animated: true, completion: nil)
         
     }
 
