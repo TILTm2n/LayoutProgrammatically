@@ -26,9 +26,7 @@ class ViewController: UIViewController {
     }
     
     @objc func didTapButton(){
-        let rootVC = UIViewController()
-        rootVC.title = "Welocme"
-        rootVC.view.backgroundColor = .green
+        let rootVC = SecondVC()
         let navVC = UINavigationController(rootViewController: rootVC)
         navVC.navigationBar.backgroundColor = .cyan
         
@@ -37,5 +35,13 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+class SecondVC: UIViewController{
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .orange
+        title = "Welcome"
+    }
 }
 
