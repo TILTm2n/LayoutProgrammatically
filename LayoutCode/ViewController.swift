@@ -33,8 +33,6 @@ class ViewController: UIViewController {
         present(navVC, animated: true, completion: nil)
         
     }
-
-
 }
 
 class SecondVC: UIViewController{
@@ -45,6 +43,11 @@ class SecondVC: UIViewController{
         super.viewDidLoad()
         view.backgroundColor = .orange
         title = "Welcome"
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Dismiss",
+                                                                  style: .plain,
+                                                                  target: self,
+                                                                  action: #selector(dismissSelf))
         
         button.frame = CGRect(x: 70, y: 100, width: 300, height: 40)
         view.addSubview(button)
@@ -60,6 +63,10 @@ class SecondVC: UIViewController{
         vc.view.backgroundColor = .green
         vc.title = "another VC"
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc private func dismissSelf(){
+        dismiss(animated: true, completion: nil)
     }
         
 }
