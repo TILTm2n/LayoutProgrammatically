@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let button = UIButton()
+    let tabButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,14 @@ class ViewController: UIViewController {
         button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         
+        tabButton.frame = CGRect(x: 100, y: 145, width: 200, height: 40)
+        view.addSubview(tabButton)
+        tabButton.backgroundColor = .orange
+        tabButton.layer.cornerRadius = 10
+        tabButton.setTitle("to tab controller", for: .normal)
+        tabButton.setTitleColor(.black, for: .normal)
+        tabButton.addTarget(self, action: #selector(didTapTabButton), for: .touchUpInside)
+        
     }
     
     @objc func didTapButton(){
@@ -31,6 +40,19 @@ class ViewController: UIViewController {
         navVC.navigationBar.backgroundColor = .cyan
         navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: true, completion: nil)
+        
+    }
+    
+    @objc func didTapTabButton(){
+        let thirdVC = ThirdViewController()
+        thirdVC.title = "ThirdVC"
+        let fourthVC = FourthViewController()
+        fourthVC.title = "FourthVC"
+        let tabBC = UITabBarController()
+        tabBC.modalPresentationStyle = .fullScreen
+        tabBC.setViewControllers([thirdVC, fourthVC], animated: true)
+        present(tabBC, animated: true, completion: nil)
+        
         
     }
 }
@@ -71,3 +93,18 @@ class SecondVC: UIViewController{
         
 }
 
+class ThirdViewController: UIViewController{
+    
+    override func viewDidLoad() {
+        view.backgroundColor = .yellow
+        
+    }
+}
+
+class FourthViewController: UIViewController{
+    
+    override func viewDidLoad() {
+        view.backgroundColor = .green
+        
+    }
+}
