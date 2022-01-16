@@ -44,10 +44,12 @@ class ViewController: UIViewController {
     }
     
     @objc func didTapTabButton(){
-        let thirdVC = ThirdViewController()
+        let thirdVC = UINavigationController(rootViewController: ThirdViewController())
+        let fourthVC = UINavigationController(rootViewController: FourthViewController())
+        
         thirdVC.title = "ThirdVC"
-        let fourthVC = FourthViewController()
         fourthVC.title = "FourthVC"
+        
         let tabBC = UITabBarController()
         tabBC.modalPresentationStyle = .fullScreen
         tabBC.setViewControllers([thirdVC, fourthVC], animated: true)
