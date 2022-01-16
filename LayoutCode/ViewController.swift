@@ -76,7 +76,7 @@ class SecondVC: UIViewController{
         button.frame = CGRect(x: 70, y: 100, width: 300, height: 40)
         view.addSubview(button)
         button.backgroundColor = .blue
-        button.layer.cornerRadius = CGFloat(5.0)
+        button.layer.cornerRadius = CGFloat(6.0)
         button.setTitle("push another controller", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
