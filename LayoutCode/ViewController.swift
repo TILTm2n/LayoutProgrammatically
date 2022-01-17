@@ -104,7 +104,7 @@ class SecondVC: UIViewController{
 class ThirdViewController: UIViewController{
     
     override func viewDidLoad() {
-        view.backgroundColor = .white
+        view.backgroundColor = .cyan
         
     }
 }
@@ -112,7 +112,7 @@ class ThirdViewController: UIViewController{
 class FourthViewController: UIViewController{
     
     override func viewDidLoad() {
-        view.backgroundColor = .white
+        view.backgroundColor = .lightGray
         
         
     }
