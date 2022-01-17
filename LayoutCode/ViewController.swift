@@ -47,8 +47,14 @@ class ViewController: UIViewController {
         let thirdVC = UINavigationController(rootViewController: ThirdViewController())
         let fourthVC = UINavigationController(rootViewController: FourthViewController())
         
-        thirdVC.title = "ThirdVC"
-        fourthVC.title = "FourthVC"
+        var thirdTabBarItem = UITabBarItem()
+        thirdTabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0)
+        
+        var fourthTabBarItem = UITabBarItem()
+        fourthTabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)
+        
+        thirdVC.tabBarItem = thirdTabBarItem
+        fourthVC.tabBarItem = fourthTabBarItem
         
         let tabBC = UITabBarController()
         tabBC.modalPresentationStyle = .fullScreen
@@ -98,7 +104,7 @@ class SecondVC: UIViewController{
 class ThirdViewController: UIViewController{
     
     override func viewDidLoad() {
-        view.backgroundColor = .yellow
+        view.backgroundColor = .white
         
     }
 }
@@ -106,7 +112,8 @@ class ThirdViewController: UIViewController{
 class FourthViewController: UIViewController{
     
     override func viewDidLoad() {
-        view.backgroundColor = .green
+        view.backgroundColor = .white
+        
         
     }
 }
